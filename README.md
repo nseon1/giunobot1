@@ -1,3 +1,5 @@
+
+
 # giunobot1
 Giuno's bot for the custom game!
 
@@ -18,3 +20,5 @@ scrape the rest of posts (there are extensions to do this)
   The bot works by:
    saving the file as a csv locally; then converting the csv to array; then reading each value given as the nth value as an array
  (also fix this readme)
+
+made with love,chatgpt
