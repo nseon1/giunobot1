@@ -7,7 +7,7 @@ import time
 startTime = time.time()
 
 print(f"Importing modules...")
-csv_file = 'C:\\Users\\seon\\sheetbo\\giunobotfinal.csv'
+csv_file = 'csv file'
 csv_data = []
 
 with open(csv_file, 'r', encoding="utf-8", errors="ignore") as file:
