@@ -3,18 +3,17 @@ print(f"Starting bot...")
 
 import csv
 
-
 import time
 startTime = time.time()
 
 print(f"Importing modules...")
-csv_file = 'insert your own file here'
+csv_file = 'C:\\Users\\seon\\sheetbo\\giunobotfinal.csv'
 csv_data = []
 
-with open(csv_file, 'r', encoding="utf8", errors="ignore") as file:
+with open(csv_file, 'r', encoding="utf-8", errors="ignore") as file:
     csv_reader = csv.reader(file)
     for row in csv_reader:
-        csv_data.append(row)
+        csv_data.append(row)  # Decode to interpret newline characters
 
 
 
@@ -27,9 +26,7 @@ from dotenv import load_dotenv
 import pickle
 import os.path
 import asyncio
-#async
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
 
 
 print(f"Importing .env configuration...")
@@ -50,15 +47,14 @@ bot = commands.Bot (command_prefix='!!',intents=intents)
 
 print(f"Startup complete!\t[ {(time.time()-startTime):.2f}s ]")
 
-@bot.command(name='test')
+@bot.command(name='card')
 async def getvalue(ctx, index: int):
     # Check if the provided index is within the valid range
-    if 0 <= index < len(csv_data):
-        value = csv_data[index]
+    if 0 < index < len(csv_data):
+        value = csv_data([index -1])
         await ctx.send(f"{value}")
     else:
         await ctx.send(f"Index out of range. The valid range is from 0 to {len(csv_data) - 1}.")
-
 
 
 bot.run(TOKEN)
