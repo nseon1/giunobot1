@@ -51,7 +51,7 @@ print(f"Startup complete!\t[ {(time.time()-startTime):.2f}s ]")
 async def getvalue(ctx, index: int):
     # Check if the provided index is within the valid range
     if 0 < index < len(csv_data):
-        value = csv_data([index -1])
+        value = csv_data[index -1]
         await ctx.send(f"{value}")
     else:
         await ctx.send(f"Index out of range. The valid range is from 0 to {len(csv_data) - 1}.")
